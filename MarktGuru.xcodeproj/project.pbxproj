@@ -6,6 +6,10 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		DE5B64F12DC0ED7500DC2728 /* Factory in Frameworks */ = {isa = PBXBuildFile; productRef = DE5B64F02DC0ED7500DC2728 /* Factory */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
 		DE5B64E12DC0EC9200DC2728 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -39,6 +43,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DE5B64F12DC0ED7500DC2728 /* Factory in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -90,6 +95,7 @@
 			);
 			name = MarktGuru;
 			packageProductDependencies = (
+				DE5B64F02DC0ED7500DC2728 /* Factory */,
 			);
 			productName = MarktGuru;
 			productReference = DE5B64AA2DC0E9F500DC2728 /* MarktGuru.app */;
@@ -146,6 +152,9 @@
 			);
 			mainGroup = DE5B64A12DC0E9F500DC2728;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				DE5B64EF2DC0ED7500DC2728 /* XCRemoteSwiftPackageReference "Factory" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = DE5B64AB2DC0E9F500DC2728 /* Products */;
 			projectDirPath = "";
@@ -444,6 +453,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		DE5B64EF2DC0ED7500DC2728 /* XCRemoteSwiftPackageReference "Factory" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/hmlongco/Factory";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.4.3;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		DE5B64F02DC0ED7500DC2728 /* Factory */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DE5B64EF2DC0ED7500DC2728 /* XCRemoteSwiftPackageReference "Factory" */;
+			productName = Factory;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = DE5B64A22DC0E9F500DC2728 /* Project object */;
 }
