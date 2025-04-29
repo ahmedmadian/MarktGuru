@@ -1,24 +1,23 @@
 //
-//  FavoritesLocalDataSource.swift
+//  FavoritesDataSource.swift
 //  MarktGuru
 //
 //  Created by Ahmed Madian on 28.04.25.
 //
 
-import Foundation
 import Factory
 import CoreData
 
-// MARK: - FavoritesLocalDataSourceType
+// MARK: - FavoritesDataSourceType
 
-protocol FavoritesLocalDataSourceType {
+protocol FavoritesDataSourceType {
     func fetchFavoriteIDs() -> Set<Int>
     func toggleFavorite(_ id: Int)
 }
 
-// MARK: - FavoritesLocalDataSource
+// MARK: - FavoritesDataSource
 
-final class FavoritesLocalDataSource {
+final class FavoritesDataSource {
     @Injected(\.viewContext)private var context: NSManagedObjectContext
 
     private var fetchRequest: NSFetchRequest<Favorite> {
@@ -26,15 +25,15 @@ final class FavoritesLocalDataSource {
     }
 }
 
-// MARK: - FavoritesLocalDataSourceType
+// MARK: - FavoritesDataSourceType
 
-extension FavoritesLocalDataSource: FavoritesLocalDataSourceType {
+extension FavoritesDataSource: FavoritesDataSourceType {
     func fetchFavoriteIDs() -> Set<Int> {
         do {
             let favorites = try context.fetch(fetchRequest)
             return Set(favorites.map { Int($0.id) })
         } catch {
-            print("⚠️ FavoritesLocalDataSource.fetchFavoriteIDs failed:", error)
+            print("⚠️ FavoritesDataSource.fetchFavoriteIDs failed:", error)
             return []
         }
     }
@@ -53,7 +52,7 @@ extension FavoritesLocalDataSource: FavoritesLocalDataSourceType {
             }
             try context.save()
         } catch {
-            print("⚠️ FavoritesLocalDataSource.toggleFavorite failed:", error)
+            print("⚠️ FavoritesDataSource.toggleFavorite failed:", error)
         }
     }
 }
