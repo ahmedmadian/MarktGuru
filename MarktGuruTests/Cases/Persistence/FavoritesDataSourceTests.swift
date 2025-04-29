@@ -1,5 +1,5 @@
 //
-//  FavoritesLocalDataSourceTests.swift
+//  FavoritesDataSourceTests.swift
 //  MarktGuruTests
 //
 //  Created by Ahmed Madian on 28.04.25.
@@ -10,9 +10,9 @@ import CoreData
 import Factory
 @testable import MarktGuru
 
-final class FavoritesLocalDataSourceTests: XCTestCase {
+final class FavoritesDataSourceTests: XCTestCase {
     private var inMemoryContainer: NSPersistentContainer!
-    private var sut: FavoritesLocalDataSource!
+    private var sut: FavoritesDataSource!
 
     override func setUp() {
         let model = NSManagedObjectModel.favoriteProductModel()
@@ -29,7 +29,7 @@ final class FavoritesLocalDataSourceTests: XCTestCase {
         let contextFactory = inMemoryContainer.viewContext
         Container.shared.viewContext.register { contextFactory }
 
-        sut = FavoritesLocalDataSource()
+        sut = FavoritesDataSource()
     }
 
     override func tearDown() {
